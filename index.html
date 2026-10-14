@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="music-player">
+
+        <header class="player-header">
+            <span class="music-icon">♫</span>
+            <h1>Music Player</h1>
+            <p>Your music, your mood.</p>
+        </header>
+
+        <!-- Album Cover -->
+        <div class="album-cover" id="albumCover">
+            <div class="cover-art">♫</div>
+        </div>
+
+        <!-- Song Information -->
+        <div class="song-info">
+            <h2 id="songTitle">Dreams</h2>
+            <p id="artistName">Benjamin Tissot</p>
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="audio" preload="metadata"></audio>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <input
+                type="range"
+                id="progress"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="Song progress"
+            >
+
+            <div class="time-info">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <!-- Main Controls -->
+        <div class="controls">
+            <button id="prevBtn" aria-label="Previous song">⏮</button>
+
+            <button id="playBtn" class="play-btn"
+                    aria-label="Play music">▶</button>
+
+            <button id="nextBtn" aria-label="Next song">⏭</button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-container">
+            <span>🔈</span>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.7"
+                aria-label="Volume"
+            >
+
+            <span>🔊</span>
+        </div>
+
+        <!-- Autoplay Toggle -->
+        <label class="autoplay-control">
+            <input type="checkbox" id="autoplay" checked>
+            Autoplay next song
+        </label>
+
+        <!-- Playlist -->
+        <div class="playlist-section">
+            <h3>My Playlist</h3>
+            <div id="playlist" class="playlist"></div>
+        </div>
+
+        <p id="status" class="status" aria-live="polite"></p>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
